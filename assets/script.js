@@ -40,19 +40,22 @@ function updateDots () {
 		}
 	});
 }
-
+//ajout d'un event click pour l'element arrowRight
 arrowRight.addEventListener("click", () => {
+	//incrémente l'index de 1 
 	index++;
-	if (index === slides.length) {// si l'index est égal à la longueur des slides 
+	if (index === slides.length) {// si l'index atteint la longueur des slides 
 		index = 0; // Si on atteint la fin, on revient au premier slide
 	}
 
 	//Affichage d'un msg pour vérifier l'event 
 	console.log("Clic sur la flèche droite")
 
+	//met à jour l'image de la bannière et le tire 
 	bannerImg.src = slides[index].image;
 	title.innerHTML = slides[index].tagLine;
 
+	//met à jour les points de navigation 
 	updateDots(); 
 });
 
